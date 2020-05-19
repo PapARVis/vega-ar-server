@@ -1,0 +1,45 @@
+{
+  "name": "vega-ar-server",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "clean": "rm -rf build",
+    "build": "npm run clean && tsc -p .",
+    "clean:pm2": "pm2 delete vegaar-api && pm2 delete vegaar-static",
+    "start:pm2": "pm2 start build/api.js -n vegaar-api && pm2 start build/static.js -n vegaar-static"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenzhutian/vega-ar-server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chenzhutian/vega-ar-server/issues"
+  },
+  "homepage": "https://github.com/chenzhutian/vega-ar-server#readme",
+  "dependencies": {
+    "@koa/cors": "^3.0.0",
+    "@types/koa": "^2.0.49",
+    "@types/koa-bodyparser": "^4.3.0",
+    "@types/koa-static": "^4.0.1",
+    "@types/koa__cors": "^2.2.3",
+    "@types/node": "^12.6.2",
+    "@types/sharp": "^0.22.2",
+    "@types/shortid": "^0.0.29",
+    "@types/qrcode": "^1.3.3",
+    "ajv": "^6.10.1",
+    "ajv-async": "^1.0.1",
+    "axios": "^0.19.0",
+    "canvas": "^2.5.0",
+    "image-size": "^0.7.4",
+    "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-static": "^5.0.0",
+    "sharp": "^0.22.1",
+    "shortid": "^2.2.14",
+    "vega": "^5.4.0",
+    "qrcode": "^1.4.1",
+    "vega-ar": "git+ssh://git@github.com:chenzhutian/vega-ar.git#89725e5ad8c981a7d5a96f1a85bb05db40e9da92"
+  }
+}
